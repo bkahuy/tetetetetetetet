@@ -9,7 +9,6 @@ import { giangVienRoute } from "./routes/giang-vien.routes";
 import { sinhVienRoute } from "./routes/sinh-vien.routes";
 import { db } from "./config/db";
 import { logger } from "hono/logger";
-import { authMiddleware } from "./middlewares/auth.middleware";
 
 const app = new Hono();
 
@@ -25,7 +24,6 @@ db.getConnection()
 
 // Middleware
 app.use('*', logger());
-app.use('*', authMiddleware);
 
 // Khai báo các routes
 app.route("/api/dot-do-an", dotDoAnRoute);

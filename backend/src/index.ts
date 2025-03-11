@@ -1,16 +1,16 @@
 import { Hono } from "hono";
-import { dotDoAnRoutes } from "./routes/dotDoAnRoutes";
-import { dotThucTapRoutes } from "./routes/dotThucTapRoutes";
-import { doAnRoutes } from "./routes/doAnRoutes";
-import { congTyRoutes } from "./routes/congTyRoutes";
+import { dotDoAnRoute } from "./routes/dotDoAnRoute";
+import { dotThucTapRoute } from "./routes/dotThucTapRoute";
+import { doAnRoute} from "./routes/doAnRoute";
+import { congTyRoute } from "./routes/congTyRoute";
 
 const app = new Hono();
 
 // Đăng ký các route vào app
-app.route("/dot-do-an", dotDoAnRoutes);
-app.route("/dot-thuc-tap", dotThucTapRoutes);
-app.route("/do-an", doAnRoutes);
-app.route("/cong-ty", congTyRoutes);
+app.route("/dot-do-an", dotDoAnRoute);
+app.route("/dot-thuc-tap", dotThucTapRoute);
+app.route("/do-an", doAnRoute);
+app.route("/cong-ty", congTyRoute);
 
 // Khởi động server trên port 3000
 export default {

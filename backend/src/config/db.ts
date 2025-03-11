@@ -1,18 +1,14 @@
-import mysql from 'mysql2/promise';
+import mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
-export const db = await mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+dotenv.config();
+
+export const db = mysql.createPool({
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "root",  // Cần đảm bảo user hợp lệ
+  password: process.env.DB_PASS || "",  // Nếu có mật khẩu, nhập vào
+  database: process.env.DB_NAME || "HThong",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
 });
-
-// Ở đây nhớ hãy sử dụng Bun và đã tạo và cài đặt file env xong
-
-// Ví dụ cho việc sử dụng database:
-// import { db } from '../config/db';
-
-// export const getSinhVien = async () => {
-//   const [rows] = await db.query('SELECT * FROM SINH_VIEN');
-//   return rows;
-// };
