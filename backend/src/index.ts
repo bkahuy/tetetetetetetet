@@ -1,8 +1,8 @@
 import { Hono } from "hono";
-import { dotDoAnRoutes } from "./src/routes/dotDoAnRoutes";
-import { dotThucTapRoutes } from "./src/routes/dotThucTapRoutes";
-import { doAnRoutes } from "./src/routes/doAnRoutes";
-import { congTyRoutes } from "./src/routes/congTyRoutes";
+import { dotDoAnRoutes } from "./routes/dotDoAnRoutes";
+import { dotThucTapRoutes } from "./routes/dotThucTapRoutes";
+import { doAnRoutes } from "./routes/doAnRoutes";
+import { congTyRoutes } from "./routes/congTyRoutes";
 
 const app = new Hono();
 
