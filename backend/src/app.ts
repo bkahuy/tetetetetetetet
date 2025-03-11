@@ -4,6 +4,9 @@ import { dotDoAnRoute } from "./routes/dot-do-an.routes";
 import { dotThucTapRoute } from "./routes/dot-thuc-tap.routes";
 import { doAnRoute } from "./routes/do-an.routes";
 import { congTyRoute } from "./routes/cong-ty.routes";
+import { nganhRouter } from "./routes/nganh.routes";
+import { giangVienRouter } from "./routes/giang-vien.routes";
+import { sinhVienRouter } from "./routes/sinh-vien.routes";
 import { db } from "./config/db";
 
 const app = new Hono();
@@ -24,6 +27,9 @@ app.route("/api/dot-do-an", dotDoAnRoute);
 app.route("/api/dot-thuc-tap", dotThucTapRoute);
 app.route("/api/do-an", doAnRoute);
 app.route("/api/cong-ty", congTyRoute);
+app.route('/api/nganh', nganhRouter);
+app.route('/api/giang-vien', giangVienRouter);
+app.route('/api/sinh-vien', sinhVienRouter);
 
 // Route mặc định
 app.get("/", (c) => c.text("Welcome to the Project & Internship Management API "));
